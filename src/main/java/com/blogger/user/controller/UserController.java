@@ -1,17 +1,19 @@
 package com.blogger.user.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blogger.user.response.RESTResponse;
+import com.blogger.user.service.UserService;
 
 @RestController
 public class UserController {
 
-    // @Autowired
-    // UserService userService;
+    @Autowired
+    UserService userService;
 
     // @RequestMapping(value = "/api/user", method = RequestMethod.POST,
     // produces = { MediaType.APPLICATION_JSON_VALUE })
@@ -30,8 +32,7 @@ public class UserController {
     @RequestMapping(value = "/api/user", method = RequestMethod.GET, produces = {
             MediaType.APPLICATION_JSON_VALUE})
     public RESTResponse fetchAllUsers() {
-        return null;
-        // return RESTResponse.ok(userService.getAllUsers());
+        return RESTResponse.ok(userService.fetchAllUsers());
     }
     //
     // @RequestMapping(value = "/api/user/{user-id}", method =
