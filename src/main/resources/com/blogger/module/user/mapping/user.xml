@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<mapping map-id="user-create-dto-to-entity" type="one-way">
+		<class-a>com.blogger.user.dto.UserDto</class-a>
+		<class-b>com.blogger.user.document.User</class-b>
+		<field-exclude>
+			<a>id</a>
+			<b>id</b>
+		</field-exclude>
+		<field>
+			<a date-format="dd/MM/yyyy">dateOfBirth</a>
+			<b>dateOfBirth</b>
+		</field>
+		<field>
+			<a>addressDto</a>
+			<b>address</b>
+		</field>
+	</mapping>
+	
+	<mapping map-id="user" type="bi-directional">
+		<class-a>com.blogger.user.dto.UserDto</class-a>
+		<class-b>com.blogger.user.document.User</class-b>
+		<field>
+			<a date-format="dd/MM/yyyy">dateOfBirth</a>
+			<b>dateOfBirth</b>
+		</field>
+		<field>
+			<a>addressDto</a>
+			<b>address</b>
+		</field>
+	</mapping>
+</mappings>
