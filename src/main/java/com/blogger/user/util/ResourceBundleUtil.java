@@ -60,7 +60,6 @@ public class ResourceBundleUtil {
 		if (localeToUse == null) {
 			localeToUse = Locale.ENGLISH;
 		}
-		Locale.setDefault(Locale.ENGLISH);
 		ResourceBundle bundle = null;
 		try {
 			bundle = ResourceBundle.getBundle(properties, localeToUse);

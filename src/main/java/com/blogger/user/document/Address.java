@@ -2,13 +2,13 @@ package com.blogger.user.document;
 
 public class Address {
 
-    String addressLine;
+    private String addressLine;
 
-    String city;
+    private String city;
 
-    String state;
+    private String state;
 
-    String emailId;
+    private String emailId;
 
     public Address() {
         super();

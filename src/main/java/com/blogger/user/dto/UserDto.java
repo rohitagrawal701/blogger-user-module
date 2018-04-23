@@ -1,37 +1,36 @@
 package com.blogger.user.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class UserDto implements Serializable {
 
     /**
      *
      */
-    private static final long serialVersionUID = 2737481750300539266L;
+    private static final long serialVersionUID = 1L;
 
     private String id;
 
-    String bloggerName;
+    private String bloggerName;
 
-    String firstName;
+    private String firstName;
 
-    String middleName;
+    private String middleName;
 
-    String lastName;
+    private String lastName;
 
-    Date dateOfBirth;
+    private String dateOfBirth;
 
     private String password;
 
-    AddressDto addressDto;
+    private AddressDto addressDto;
 
     public UserDto() {
     }
 
     public UserDto(final String bloggerName, final String firstName,
             final String middleName, final String lastName,
-            final Date dateOfBirth, final AddressDto AddressDto,
+            final String dateOfBirth, final AddressDto AddressDto,
             final String password) {
         super();
         this.bloggerName = bloggerName;
@@ -47,7 +46,7 @@ public class UserDto implements Serializable {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 
@@ -83,11 +82,11 @@ public class UserDto implements Serializable {
         this.lastName = lastName;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(final Date dateOfBirth) {
+    public void setDateOfBirth(final String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

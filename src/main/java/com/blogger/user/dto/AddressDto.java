@@ -7,15 +7,15 @@ public class AddressDto implements Serializable {
     /**
      * 
      */
-    private static final long serialVersionUID = 8079220141932948549L;
+    private static final long serialVersionUID = 1L;
 
-    String addressLine;
+    private String addressLine;
 
-    String city;
+    private String city;
 
-    String state;
+    private String state;
 
-    String emailId;
+    private String emailId;
 
     public AddressDto() {
     }

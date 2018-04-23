@@ -7,31 +7,35 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "user")
 public class User extends BaseDocument {
 
-    String bloggerName;
+    private String bloggerName;
 
-    String firstName;
+    private String firstName;
 
-    String middleName;
+    private String middleName;
 
-    String lastName;
+    private String lastName;
 
-    Date dateOfBirth;
-    
-    Date lastLogin;
-    
-    Date createdOn;
+    private Date dateOfBirth;
+
+    private Date lastLogin;
+
+    private Date createdOn;
+
+    private Date updatedOn;
 
     private String password;
 
-    Address address;
+    private Address address;
 
     public User() {
         super();
     }
 
-    public User(String bloggerName, String firstName, String middleName,
-            String lastName, Date dateOfBirth, Date lastLogin, Date createdOn,
-            String password, Address address) {
+    public User(final String bloggerName, final String firstName,
+            final String middleName, final String lastName,
+            final Date dateOfBirth, final Date updatedOn, final Date lastLogin,
+            final Date createdOn, final String password,
+            final Address address) {
         super();
         this.bloggerName = bloggerName;
         this.firstName = firstName;
@@ -40,6 +44,7 @@ public class User extends BaseDocument {
         this.dateOfBirth = dateOfBirth;
         this.lastLogin = lastLogin;
         this.createdOn = createdOn;
+        this.updatedOn = updatedOn;
         this.password = password;
         this.address = address;
     }
@@ -104,7 +109,7 @@ public class User extends BaseDocument {
         return lastLogin;
     }
 
-    public void setLastLogin(Date lastLogin) {
+    public void setLastLogin(final Date lastLogin) {
         this.lastLogin = lastLogin;
     }
 
@@ -112,8 +117,16 @@ public class User extends BaseDocument {
         return createdOn;
     }
 
-    public void setCreatedOn(Date createdOn) {
+    public void setCreatedOn(final Date createdOn) {
         this.createdOn = createdOn;
+    }
+
+    public Date getUpdatedOn() {
+        return updatedOn;
+    }
+
+    public void setUpdatedOn(final Date updatedOn) {
+        this.updatedOn = updatedOn;
     }
 
 }
