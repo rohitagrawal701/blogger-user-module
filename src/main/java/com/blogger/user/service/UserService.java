@@ -2,7 +2,6 @@ package com.blogger.user.service;
 
 import java.util.List;
 
-import com.blogger.user.dto.LoginDto;
 import com.blogger.user.dto.UserDto;
 
 public interface UserService {
@@ -16,7 +15,5 @@ public interface UserService {
     UserDto updateUser(UserDto userDto);
 
     UserDto insertUser(UserDto userDto);
-
-    UserDto login(LoginDto loginDto);
 
 }

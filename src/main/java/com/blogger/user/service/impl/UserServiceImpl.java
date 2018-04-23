@@ -6,13 +6,9 @@ import java.util.List;
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.blogger.user.document.User;
-import com.blogger.user.dto.LoginDto;
 import com.blogger.user.dto.UserDto;
 import com.blogger.user.repository.UserRepository;
 import com.blogger.user.service.UserService;
@@ -65,19 +61,6 @@ public class UserServiceImpl implements UserService {
         user.setUpdatedOn(Calendar.getInstance().getTime());
         userRepository.insert(user);
         userDto.setId(user.getId());
-        return userDto;
-    }
-
-    @Override
-    public UserDto login(final LoginDto loginDto) {
-        final UserDto userDto = new UserDto();
-        final User user = (User) userRepository.findAndModify(
-                new Query(Criteria
-                        .where("bloggerName").is(loginDto.getBloggerName())
-                        .and("password").is(loginDto.getPassword())),
-                new Update().set("lastLogin", Calendar.getInstance().getTime()),
-                User.class);
-        dozerBeanMapper.map(user, userDto, "user");
         return userDto;
     }
 
