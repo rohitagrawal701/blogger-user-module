@@ -6,4 +6,6 @@ import com.blogger.user.dto.UserDto;
 public interface LoginService {
 
     UserDto login(LoginDto loginDto);
+
+    UserDto changePassword(LoginDto loginDto);
 }

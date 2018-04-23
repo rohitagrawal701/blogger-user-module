@@ -13,14 +13,18 @@ public class LoginDto implements Serializable {
 
     private String password;
 
+    private String newPassword;
+
     public LoginDto() {
         super();
     }
 
-    public LoginDto(final String bloggerName, final String password) {
+    public LoginDto(final String bloggerName, final String password,
+            final String newPassword) {
         super();
         this.bloggerName = bloggerName;
         this.password = password;
+        this.newPassword = newPassword;
     }
 
     public String getBloggerName() {
@@ -37,6 +41,14 @@ public class LoginDto implements Serializable {
 
     public void setPassword(final String password) {
         this.password = password;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(final String newPassword) {
+        this.newPassword = newPassword;
     }
 
 }

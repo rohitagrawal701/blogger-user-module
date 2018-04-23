@@ -36,4 +36,17 @@ public class LoginServiceImpl implements LoginService {
         dozerBeanMapper.map(user, userDto, "user");
         return userDto;
     }
+
+    @Override
+    public UserDto changePassword(final LoginDto loginDto) {
+        final UserDto userDto = new UserDto();
+        final User user = (User) userRepository.findAndModify(
+                new Query(Criteria.where("bloggerName")
+                        .is(loginDto.getBloggerName()).and("password")
+                        .is(loginDto.getPassword())),
+                new Update().set("password", loginDto.getNewPassword()),
+                User.class);
+        dozerBeanMapper.map(user, userDto, "user");
+        return userDto;
+    }
 }

@@ -23,4 +23,10 @@ public class LoginController {
     public RESTResponse login(@RequestBody final LoginDto loginDto) {
         return RESTResponse.ok(loginService.login(loginDto));
     }
+
+    @RequestMapping(value = "/change-password", method = RequestMethod.PUT, produces = {
+            MediaType.APPLICATION_JSON_VALUE})
+    public RESTResponse changePassword(@RequestBody final LoginDto loginDto) {
+        return RESTResponse.ok(loginService.changePassword(loginDto));
+    }
 }
