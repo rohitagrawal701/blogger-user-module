@@ -1,6 +1,7 @@
 package com.blogger.user.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class UserDto implements Serializable {
 
@@ -21,6 +22,12 @@ public class UserDto implements Serializable {
 
     private String dateOfBirth;
 
+    private Date lastLogin;
+
+    private Date createdOn;
+
+    private Date updatedOn;
+
     private String password;
 
     private AddressDto addressDto;
@@ -28,18 +35,22 @@ public class UserDto implements Serializable {
     public UserDto() {
     }
 
-    public UserDto(final String bloggerName, final String firstName,
-            final String middleName, final String lastName,
-            final String dateOfBirth, final AddressDto AddressDto,
-            final String password) {
+    public UserDto(String id, String bloggerName, String firstName,
+            String middleName, String lastName, String dateOfBirth,
+            Date lastLogin, Date createdOn, Date updatedOn, String password,
+            AddressDto addressDto) {
         super();
+        this.id = id;
         this.bloggerName = bloggerName;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
-        this.addressDto = AddressDto;
+        this.lastLogin = lastLogin;
+        this.createdOn = createdOn;
+        this.updatedOn = updatedOn;
         this.password = password;
+        this.addressDto = addressDto;
     }
 
     public String getId() {
@@ -106,4 +117,27 @@ public class UserDto implements Serializable {
         this.password = password;
     }
 
+    public Date getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(Date lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public Date getUpdatedOn() {
+        return updatedOn;
+    }
+
+    public void setUpdatedOn(Date updatedOn) {
+        this.updatedOn = updatedOn;
+    }
 }
