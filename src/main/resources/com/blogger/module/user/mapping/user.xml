@@ -27,6 +27,18 @@
 			<b>dateOfBirth</b>
 		</field>
 		<field>
+			<a date-format="dd/MM/yyyy">lastLogin</a>
+			<b>lastLogin</b>
+		</field>
+		<field>
+			<a date-format="dd/MM/yyyy">createdOn</a>
+			<b>createdOn</b>
+		</field>
+		<field>
+			<a date-format="dd/MM/yyyy">updatedOn</a>
+			<b>updatedOn</b>
+		</field>
+		<field>
 			<a>addressDto</a>
 			<b>address</b>
 		</field>

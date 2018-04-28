@@ -6,7 +6,7 @@ package com.blogger.user.exception;
  * operation. It is the parent level class for all custom exception created in
  * the application.
  *
- * @author DAMCO
+ * @author Rohit
  */
 public class BaseException extends Exception {
 

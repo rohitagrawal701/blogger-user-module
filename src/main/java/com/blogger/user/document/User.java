@@ -2,11 +2,13 @@ package com.blogger.user.document;
 
 import java.util.Date;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
 public class User extends BaseDocument {
 
+    @Indexed(unique = true)
     private String bloggerName;
 
     private String firstName;
